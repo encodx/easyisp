@@ -2,20 +2,22 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h2>Login</h2>
-    <?php
-    if (isset($_GET['error'])) {
-        echo '<p style="color:red;">Invalid username or password.</p>';
-    }
-    ?>
-    <form action="auth.php" method="post">
-        <label for="username">Username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" name="password"><br><br>
-        <input type="submit" value="Login">
-    </form>
+    <div class="login-container">
+        <h2>Sign In</h2>
+        <p>Welcome back!</p>
+        <?php
+        if (isset($_GET['error'])) {
+            echo '<p class="error">Invalid username or password.</p>';
+        }
+        ?>
+        <form action="auth.php" method="post">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="submit" value="Sign In">
+        </form>
+    </div>
 </body>
 </html>
